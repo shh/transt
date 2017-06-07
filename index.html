@@ -1,3 +1,22 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Gist
+ @shhng
+ Sign out
+ Unwatch 1
+  Star 0
+  Fork 0 shhng/transt
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Settings Insights 
+Branch: gh-pages Find file Copy pathtranst/index.html
+405ee6d  18 minutes ago
+@shhng shhng Update index.html
+1 contributor
+RawBlameHistory     
+293 lines (291 sloc)  107 KB
 <!doctype html><html><head><meta charset='utf-8'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.4.1/github-markdown.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
@@ -96,30 +115,30 @@ The configurations are: <eq><span class="katex"><span class="katex-mathml"><math
 <thead>
 <tr>
 <th style="text-align:center">FB15K</th>
-<th style="text-align:center">Mean Rank<br> Raw     Filter</th>
-<th style="text-align:center">HIT@10 (%)<br> Raw     Filter</th>
+<th style="text-align:center">Mean Rank<br> Raw     Filter</th>
+<th style="text-align:center">HIT@10 (%)<br> Raw     Filter</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">Single Vectors + No Type Information</td>
-<td style="text-align:center"> 196        88  </td>
-<td style="text-align:center">  52.8      81.9  </td>
+<td style="text-align:center"> 196        88  </td>
+<td style="text-align:center">  52.8      81.9  </td>
 </tr>
 <tr>
 <td style="text-align:center">Single Vectors + Type Information</td>
-<td style="text-align:center"> 181        72  </td>
-<td style="text-align:center">  54.0      82.3  </td>
+<td style="text-align:center"> 181        72  </td>
+<td style="text-align:center">  54.0      82.3  </td>
 </tr>
 <tr>
 <td style="text-align:center">Multiple Vectors + No Type Information</td>
-<td style="text-align:center"> 215        62  </td>
-<td style="text-align:center">  50.6      83.6  </td>
+<td style="text-align:center"> 215        62  </td>
+<td style="text-align:center">  50.6      83.6  </td>
 </tr>
 <tr>
 <td style="text-align:center">Multiple Vectors + Type Information (TransT)</td>
-<td style="text-align:center"> 199        46  </td>
-<td style="text-align:center">  53.3      85.4  </td>
+<td style="text-align:center"> 199        46  </td>
+<td style="text-align:center">  53.3      85.4  </td>
 </tr>
 </tbody>
 </table>
@@ -136,43 +155,45 @@ How do the hyper-parameters, e.g. of the CRP, effect the performance?</p>
 <p><strong>Feedback:</strong>
 The effects of hyper-parameters are usually complex in most models.<br>
 <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.0037em;">α</span></span></span></span></eq>: the learning rate of stochastic gradient descent (SGD). Its effect is a common issue of iteration methods. Small learning rates make the loss function slowly converge, while large rates make the loss function randomly oscillate.<br>
-<eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq>: the hyper-parameter of CRP. It controls the number of semantic vectors of each entity. Larger <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq> means more semantic vectors. Larger or smaller number of semantic vectors will decrease the performance. And too large number (too big CRP factor) also results in increasing training time. Here are some entity prediction results of different <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq> on FB15k.</p>
-<table>
+<eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq>: the hyper-parameter of CRP. It controls the number of semantic vectors of each entity. Larger <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq> means more semantic vectors. Larger or smaller number of semantic vectors will decrease the performance. And too large number (too big CRP factor) also results in increasing training time. 
+<!--Here are some entity prediction results of different <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq> on FB15k.-->
+</p>
+<!--<table>
 <thead>
 <tr>
 <th style="text-align:center"><eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span></eq></th>
-<th style="text-align:center">Mean Rank<br> Raw     Filter</th>
-<th style="text-align:center">HIT@10 (%)<br> Raw     Filter</th>
+<th style="text-align:center">Mean Rank<br> Raw     Filter</th>
+<th style="text-align:center">HIT@10 (%)<br> Raw     Filter</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">0.00001</td>
-<td style="text-align:center"> 181        73  </td>
-<td style="text-align:center">  54.0      82.3  </td>
+<td style="text-align:center"> 181        73  </td>
+<td style="text-align:center">  54.0      82.3  </td>
 </tr>
 <tr>
 <td style="text-align:center">0.00005</td>
-<td style="text-align:center"> 181        73  </td>
-<td style="text-align:center">  54.0      82.3  </td>
+<td style="text-align:center"> 181        73  </td>
+<td style="text-align:center">  54.0      82.3  </td>
 </tr>
 <tr>
 <td style="text-align:center">0.0005</td>
-<td style="text-align:center"> 181        72  </td>
-<td style="text-align:center">  54.0      82.3  </td>
+<td style="text-align:center"> 181        72  </td>
+<td style="text-align:center">  54.0      82.3  </td>
 </tr>
 <tr>
 <td style="text-align:center">0.0001</td>
-<td style="text-align:center"> 196        87  </td>
-<td style="text-align:center">  52.8      81.9  </td>
+<td style="text-align:center"> 196        87  </td>
+<td style="text-align:center">  52.8      81.9  </td>
 </tr>
 <tr>
 <td style="text-align:center">0.001</td>
-<td style="text-align:center"> 179        71  </td>
-<td style="text-align:center">  52.9      82.4  </td>
+<td style="text-align:center"> 179        71  </td>
+<td style="text-align:center">  52.9      82.4  </td>
 </tr>
 </tbody>
-</table>
+</table>-->
 <p>Results of multi-vectors are a little better in filter, but a little worse in raw.
 <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05556em;">γ</span></span></span></span></eq>: It controls the number of triples which need to be trained. In our model, if the probability of a triple in training dataset is <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>γ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{\gamma}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.664392em;"></span><span class="strut bottom" style="height:0.664392em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">e</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.05556em;">γ</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></eq> times larger than the probability of its negative sample, this triple needs not to be trained.</p>
 </blockquote>
